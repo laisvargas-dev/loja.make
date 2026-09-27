@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glow Beauty | Loja de Maquiagem</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <span>✦</span>
+            Glow<span>Beauty</span>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="search-button" onclick="abrirBusca()">
+                🔍
+            </button>
+
+            <button class="cart-button" onclick="abrirCarrinho()">
+                🛍️
+                <span id="contador">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- BUSCA -->
+    <div class="search-box" id="searchBox">
+
+        <input
+            type="text"
+            id="campoBusca"
+            placeholder="O que você está procurando?"
+            oninput="buscarProdutos()"
+        >
+
+        <button onclick="abrirBusca()">✕</button>
+
+    </div>
+
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-text">
+
+            <span class="tag">✨ SUA BELEZA, SEU GLOW</span>
+
+            <h1>
+                Realce sua
+                <strong>beleza.</strong>
+            </h1>
+
+            <p>
+                Descubra maquiagens incríveis para criar
+                looks que combinam com você.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#produtos" class="btn-primary">
+                    Comprar agora →
+                </a>
+
+                <a href="#categorias" class="btn-secondary">
+                    Explorar produtos
+                </a>
+            </div>
+
+            <div class="benefits">
+
+                <div>
+                    <b>40+</b>
+                    <span>Produtos</span>
+                </div>
+
+                <div>
+                    <b>100%</b>
+                    <span>Original</span>
+                </div>
+
+                <div>
+                    <b>24h</b>
+                    <span>Suporte</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="pink-circle"></div>
+
+            <img
+                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80"
+                alt="Maquiagem"
+            >
+
+            <div class="floating-card">
+                ✨ Glow perfeito
+                <small>Começa aqui</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIAS -->
+    <section class="categories" id="categorias">
+
+        <div class="section-title">
+            <span>EXPLORE</span>
+            <h2>Encontre seu favorito</h2>
+        </div>
+
+        <div class="category-list">
+
+            <button onclick="filtrarCategoria('Todos')" class="category active">
+                ✨ Todos
+            </button>
+
+            <button onclick="filtrarCategoria('Rosto')" class="category">
+                💗 Rosto
+            </button>
+
+            <button onclick="filtrarCategoria('Olhos')" class="category">
+                👁️ Olhos
+            </button>
+
+            <button onclick="filtrarCategoria('Lábios')" class="category">
+                💄 Lábios
+            </button>
+
+            <button onclick="filtrarCategoria('Pele')" class="category">
+                🌸 Pele
+            </button>
+
+            <button onclick="filtrarCategoria('Acessórios')" class="category">
+                👜 Acessórios
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUTOS -->
+    <main class="products-section" id="produtos">
+
+        <div class="products-header">
+
+            <div>
+                <span>BEST SELLERS</span>
+                <h2>Produtos em destaque</h2>
+            </div>
+
+            <p id="quantidadeProdutos">40 produtos</p>
+
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+
+    </main>
+
+
+    <!-- BANNER -->
+    <section class="promo">
+
+        <div>
+            <span>OFERTA ESPECIAL ✨</span>
+
+            <h2>
+                Seu glow merece
+                um desconto.
+            </h2>
+
+            <p>
+                Use o cupom <strong>GLOW20</strong>
+                e ganhe 20% OFF.
+            </p>
+
+            <button onclick="copiarCupom()">
+                COPIAR CUPOM
+            </button>
+        </div>
+
+        <div class="promo-emoji">
+            💄
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+    <section class="about" id="sobre">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80"
+                alt="Produtos de maquiagem"
+            >
+
+        </div>
+
+        <div class="about-text">
+
+            <span>SOBRE A GLOW BEAUTY</span>
+
+            <h2>
+                Maquiagem para
+                você brilhar.
+            </h2>
+
+            <p>
+                Na Glow Beauty, acreditamos que maquiagem
+                é uma forma de expressão. Selecionamos
+                produtos para você criar desde um look
+                básico até uma produção completa.
+            </p>
+
+            <div class="about-items">
+
+                <div>✓ Produtos selecionados</div>
+                <div>✓ Compra segura</div>
+                <div>✓ Envio para todo Brasil</div>
+                <div>✓ Atendimento especializado</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            ✦ GlowBeauty
+        </div>
+
+        <p>
+            Sua beleza. Seu estilo. Seu glow.
+        </p>
+
+        <div class="socials">
+            Instagram &nbsp; • &nbsp; TikTok &nbsp; • &nbsp; Pinterest
+        </div>
+
+        <small>
+            © 2026 Glow Beauty. Todos os direitos reservados.
+        </small>
+
+    </footer>
+
+
+    <!-- CARRINHO -->
+    <div class="overlay" id="overlay" onclick="fecharCarrinho()"></div>
+
+    <aside class="cart" id="cart">
+
+        <div class="cart-header">
+
+            <h2>Seu carrinho 🛍️</h2>
+
+            <button onclick="fecharCarrinho()">✕</button>
+
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-footer">
+
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="total">R$ 0,00</strong>
+            </div>
+
+            <button class="checkout" onclick="finalizarCompra()">
+                FINALIZAR COMPRA →
+            </button>
+
+            <small>
+                🔒 Compra segura
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
